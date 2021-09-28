@@ -5,8 +5,8 @@ module "alb" {
   name = "${var.app}-${var.environment}-alb"
 
   load_balancer_type         = "application"
-  internal                   = true
-  enable_deletion_protection = true
+  internal                   = false
+  enable_deletion_protection = false
   vpc_id                     = data.aws_vpc.vpc.id
   subnets                    = [for s in data.aws_subnet.subnets : s.id]
   security_groups            = [data.aws_security_group.external_http_sg.id, data.aws_security_group.internal_allow_sg.id]
