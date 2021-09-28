@@ -10,8 +10,8 @@ resource "aws_vpc" "vpc" {
   tags = {
     Name                    = "${var.app}_vpc"
     built_by                = "terraform"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -25,8 +25,8 @@ resource "aws_subnet" "public_a" {
     Name                    = "${var.app}_subnet"
     built_by                = "terraform"
     subnet_type             = "public"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -40,8 +40,8 @@ resource "aws_subnet" "public_b" {
     Name                    = "${var.app}_subnet"
     built_by                = "terraform"
     subnet_type             = "public"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -54,8 +54,8 @@ resource "aws_subnet" "private_a" {
     Name                    = "${var.app}_subnet"
     built_by                = "terraform"
     subnet_type             = "private"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -68,8 +68,8 @@ resource "aws_subnet" "private_b" {
     Name                    = "${var.app}_subnet"
     built_by                = "terraform"
     subnet_type             = "private"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -79,8 +79,8 @@ resource "aws_internet_gateway" "gateway" {
   tags = {
     Name                    = "${var.app}_gateway"
     built_by                = "terraform"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -95,8 +95,8 @@ resource "aws_route_table" "route" {
   tags = {
     Name                    = "${var.app}_route"
     built_by                = "terraform"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -115,8 +115,8 @@ resource "aws_security_group" "allow_ssh" {
   tags = {
     Name                    = "${var.app}_ssh_allow"
     built_by                = "terraform"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }
 }
 
@@ -159,8 +159,8 @@ resource "aws_security_group" "public_allow" {
   tags = {
     Name                    = "${var.app}_public_allow"
     built_by                = "terraform"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }  
 }
 
@@ -184,7 +184,7 @@ resource "aws_security_group" "internal_allow" {
   tags = {
     Name                    = "${var.app}_internal_allow"
     built_by                = "terraform"
-    app                     = "${var.app}"
-    environment             = "${var.environment}"
+    app                     = var.app
+    environment             = var.environment
   }  
 }
